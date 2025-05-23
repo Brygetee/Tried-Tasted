@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tried & Tasted</title>
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+{% include "header.html" %}
+<h1>My Recipes</h1>
+<div style="display: flex; justify-content: center;">
+<a href="{{ url_for('add_recipe') }}" class="btn btn-warning btn-lg" id="Add_New_Recipe_Button">
+  Add New Recipe
+</a>
+</div>
+</body>
+</html>

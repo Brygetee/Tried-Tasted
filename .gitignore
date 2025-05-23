@@ -1,0 +1,41 @@
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environments
+venv/
+.venv/
+ENV/
+env/
+
+# PyCharm project settings
+.idea/
+
+# dotenv (secrets & config)
+.env
+.env.*
+
+# Flask instance folder (for config/secrets)
+instance/
+
+# Flask-Assets cache (if used in the future)
+.webassets-cache/
+
+# Testing & coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Build artifacts (just in case)
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# Logs
+*.log
+
+# OS-specific files
+.DS_Store
+Thumbs.db

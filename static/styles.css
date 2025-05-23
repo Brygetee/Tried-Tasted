@@ -1,0 +1,35 @@
+/* Header Styles */
+.nav-link{
+    color: #F1642E; /* Color of links */
+}
+
+.nav-link:hover {
+  background-color: #F1642E; /* Background & text color changes on hover */
+  color: #FCDD9D;
+}
+li {
+   display:inline-block;
+   padding: 0 40px; /* Spacing between links */
+}
+
+
+/* Homepage Styles */
+body {
+  background-color: #FCDD9D;
+}
+h1 {
+  text-align: center;
+  color: #F1642E;
+  margin-top: 0px;
+}
+#Add_New_Recipe_Button{
+    margin-top: 40px;
+    background-color: #F1642E;
+    color: #FCDD9D;
+    box-shadow: none;
+
+}
+#Add_New_Recipe_Button:hover{
+    margin-top: 40px;
+    color: orange;
+}
