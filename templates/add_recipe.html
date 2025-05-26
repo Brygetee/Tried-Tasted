@@ -11,7 +11,7 @@
 
   <h1>New Recipe!</h1>
 
-  <form method="POST" action="/add_new_recipe">
+  <form method="POST" action="/add_new_recipe" accept-charset="UTF-8">
     {{ form.hidden_tag() }}
 
     <label for="recipe_name">{{ form.recipe_name.label.text }}</label><br>

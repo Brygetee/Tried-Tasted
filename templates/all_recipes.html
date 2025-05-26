@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+{% include "header.html" %}
+{% for recipe in recipe_list %}
+  <div>
+    <h2>{{ recipe.recipe_name }}</h2>
+    <a href="{{ recipe.url }}">{{ recipe.url }}</a>
+    <p>{{ recipe.recipe | safe }}</p>
+  </div>
+{% else %}
+  <p>No recipes yet!</p>
+{% endfor %}
+</body>
+</html>

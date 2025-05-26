@@ -20,16 +20,38 @@ body {
 h1 {
   text-align: center;
   color: #F1642E;
-  margin-top: 0px;
+  margin-top: 25px;
+  margin-bottom: 50px;
 }
-#Add_New_Recipe_Button{
+#add_new_recipe_button{
     margin-top: 40px;
+    margin-bottom: 40px;
     background-color: #F1642E;
     color: #FCDD9D;
     box-shadow: none;
 
 }
-#Add_New_Recipe_Button:hover{
+#add_new_recipe_button:hover{
     margin-top: 40px;
     color: orange;
+}
+/*Homepage Meal Cards*/
+
+/*text in the cards */
+.card-body{
+margin-left: 90px;
+}
+
+.card{
+margin-left: 90px;
+margin-right: 90px;
+}
+/*card buttons*/
+.meal_button{
+    color: #F1642E;
+    background-color:#FCDD9D;
+}
+.meal_button:hover{
+    color: orange;
+    background-color:black;
 }
