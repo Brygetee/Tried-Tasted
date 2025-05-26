@@ -58,6 +58,27 @@ def dinner_recipes():
 def dessert_recipes():
     return render_template("dessert_recipes.html")
 
+@app.route("/drink_recipes")
+def drink_recipes():
+    return render_template("drink_recipes.html")
+
+@app.route("/side_dish_recipes")
+def side_dish_recipes():
+    return render_template("side_dish_recipes.html")
+
+@app.route("/breads_and_baked_goods")
+def breads_and_baked_goods_recipes():
+    return render_template("breads_and_baked_goods_recipes.html")
+
+@app.route("/soups_and_stews_recipes")
+def soups_and_stews_recipes():
+    return render_template("soups_and_stews_recipes.html")
+
+@app.route("/condiments_and_staples")
+def condiments_and_staples():
+    return render_template("condiments_and_staples.html")
+
+
 @app.route("/add_new_recipe", methods =['POST', 'GET'])
 def add_recipe():
     form = AddRecipeForm()
