@@ -7,18 +7,28 @@
 </head>
 <body>
 {% include "header.html" %}
-<h1>My Recipes</h1>
-<!---->
-<!--Cards-->
 
+
+<!--All Recipes Button-->
+
+<div style="display: flex; justify-content: center;">
+<a href="{{ url_for('all_recipes') }}" class="btn btn-warning btn-lg" id="all_recipes_button">
+  All Recipes
+</a>
+</div>
+
+
+
+<!--Cards-->
+<div class="all_cards">
 <!--Breakfast Card-->
-<div class="row row-cols-1 row-cols-md-2 g-4">
+<div class="row row-cols-1 row-cols-md-3 gx-1 g-4">
   <div class="col">
     <div class="card">
-      <img src="..." class="card-img-top" alt="...">
+      <img src="static/images/breakfast.png" class="card-img-top food_icon" alt="...">
       <div class="card-body">
         <h5 class="card-title">Breakfast Recipes</h5>
-        <p class="card-text">All your breakfast recipes in one place.</p>
+        <p class="card-text">All your breakfast recipes in one place!</p>
       <a href="{{ url_for('breakfast_recipes') }}" class="btn btn-warning btn-lg meal_button" id="all_breakfast_recipes_button">
   Go to Breakfast Recipes!
 </a>
@@ -29,7 +39,7 @@
 <!--Lunch Card-->
   <div class="col">
     <div class="card">
-      <img src="..." class="card-img-top" alt="...">
+      <img src="static/images/chicken_wrap.png" class="card-img-top food_icon" alt="...">
       <div class="card-body">
         <h5 class="card-title">Lunch Recipes</h5>
         <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -43,7 +53,7 @@
 <!--Dinner Card-->
   <div class="col">
     <div class="card">
-      <img src="..." class="card-img-top" alt="...">
+      <img src="static/images/chicken kebab.png" class="card-img-top food_icon" alt="...">
       <div class="card-body">
         <h5 class="card-title">Dinner Recipes</h5>
         <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
@@ -57,7 +67,7 @@
 <!--Side dishes Card-->
   <div class="col">
     <div class="card">
-      <img src="..." class="card-img-top" alt="...">
+      <img src="static/images/potatoes.png" class="card-img-top food_icon" alt="...">
       <div class="card-body">
         <h5 class="card-title">Side Dishes</h5>
         <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
@@ -70,10 +80,10 @@
 <!--Dessert Cards-->
   <div class="col">
     <div class="card">
-      <img src="..." class="card-img-top" alt="...">
+      <img src="static/images/chocolate_cake.png" class="card-img-top food_icon" alt="...">
       <div class="card-body">
         <h5 class="card-title">Dessert Recipes</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <p class="card-text">All Your Desserts in one place.</p>
             <a href="{{ url_for('dessert_recipes') }}" class="btn btn-warning btn-lg meal_button" id="all_dessert_recipes_button">
   Go to Dessert Recipes!
 </a>
@@ -84,7 +94,7 @@
 <!--drinks-->
   <div class="col">
     <div class="card">
-      <img src="..." class="card-img-top" alt="...">
+      <img src="static/images/chai.png" class="card-img-top food_icon" alt="...">
       <div class="card-body">
         <h5 class="card-title">Drink Recipes</h5>
         <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -98,7 +108,7 @@
     <!--baked goods-->
   <div class="col">
     <div class="card">
-      <img src="..." class="card-img-top" alt="...">
+      <img src="static/images/toast.png" class="card-img-top food_icon" alt="...">
       <div class="card-body">
         <h5 class="card-title">Breads & Baked Goods</h5>
         <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -112,7 +122,7 @@
     <!--Soups & Stews-->
   <div class="col">
     <div class="card">
-      <img src="..." class="card-img-top" alt="...">
+      <img src="static/images/pozole.png" class="card-img-top food_icon" alt="...">
       <div class="card-body">
         <h5 class="card-title">Soups & Stews</h5>
         <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -126,7 +136,7 @@
         <!--Condiments & Staples -->
   <div class="col">
     <div class="card">
-      <img src="..." class="card-img-top" alt="...">
+      <img src="static/images/mayo.png" class="card-img-top food_icon" alt="...">
       <div class="card-body">
         <h5 class="card-title">Condiments & Staples</h5>
         <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
@@ -142,13 +152,6 @@
 
 <!---->
 
-<!--All Recipes Button-->
-
-<div style="display: flex; justify-content: center;">
-<a href="{{ url_for('all_recipes') }}" class="btn btn-warning btn-lg" id="all_recipes_button">
-  All Recipes
-</a>
-</div>
 
 <!--Add A New Recipe Button-->
 
@@ -157,6 +160,6 @@
   Add New Recipe
 </a>
 </div>
-
+</div>
 </body>
 </html>

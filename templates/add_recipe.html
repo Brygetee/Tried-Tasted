@@ -9,22 +9,23 @@
 <body>
   {% include "header.html" %}
 
-  <h1>New Recipe!</h1>
-
-  <form method="POST" action="/add_new_recipe" accept-charset="UTF-8">
-    {{ form.hidden_tag() }}
-
-    <label for="recipe_name">{{ form.recipe_name.label.text }}</label><br>
-    {{ form.recipe_name(id="recipe_name") }}<br><br>
-
-    <label for="url">{{ form.url.label.text }}</label><br>
-    {{ form.url(id="url") }}<br><br>
-
-    <label for="recipe">{{ form.recipe.label.text }}</label><br>
-    {{ form.recipe(id="recipe") }}<br><br>
-
+  <div class="new_recipe_form">
+    <form method="POST" action="/add_new_recipe" accept-charset="UTF-8">
+      {{ form.hidden_tag() }}
+    <div class="">
+      <label for="recipe_name">{{ form.recipe_name.label.text }}</label><br>
+      {{ form.recipe_name(id="recipe_name") }}<br><br>
+    </div>
+    <div>
+      <label for="url">{{ form.url.label.text }}</label><br>
+      {{ form.url(id="url") }}<br><br>
+    </div>
+    <div>
+      <label for="recipe">{{ form.recipe.label.text }}</label><br>
+      {{ form.recipe(id="recipe") }}<br><br>
+    </div>
     {{ form.submit() }}
   </form>
-
+</div>
 </body>
 </html>
