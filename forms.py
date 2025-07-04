@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, SubmitField
-from wtforms.validators import DataRequired, URL
+from wtforms import StringField, SubmitField, PasswordField
+from wtforms.validators import DataRequired, URL, Email, Length, InputRequired
 from flask_ckeditor import CKEditorField
 
 # WTForm for adding a new recipe
@@ -9,3 +9,10 @@ class AddRecipeForm(FlaskForm):
     url = StringField("URL", validators=[DataRequired()])
     recipe = CKEditorField("Written Recipe")
     submit = SubmitField("Submit Post")
+
+# Login form
+
+class LoginForm(FlaskForm):
+    email = StringField('Email', validators=[InputRequired(), Email()])
+    password = PasswordField('Password', validators=[InputRequired(), Length(min=6)])
+    submit = SubmitField('Log In')

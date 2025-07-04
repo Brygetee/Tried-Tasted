@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <h2>Login</h2>
+
+  <!-- Form POSTs to the same URL -->
+  <form method="POST">
+    {{ form.hidden_tag() }} <!-- CSRF protection -->
+
+    <!-- Email input -->
+    <p>{{ form.email.label }} {{ form.email(size=32) }}</p>
+
+    <!-- Password input -->
+    <p>{{ form.password.label }} {{ form.password(size=32) }}</p>
+
+    <!-- Submit button -->
+    <p>{{ form.submit() }}</p>
+  </form>
+</body>
+</html>

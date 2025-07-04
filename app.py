@@ -1,10 +1,12 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, redirect, flash, request
 from flask_sqlalchemy import SQLAlchemy
+from flask_login import LoginManager, login_user, login_required, logout_user, current_user, UserMixin
+from werkzeug.security import generate_password_hash, check_password_hash
 from flask.cli import load_dotenv
 from flask_ckeditor import CKEditor
 from werkzeug.utils import redirect
 from flask_wtf.csrf import CSRFProtect
-from forms import AddRecipeForm
+from forms import AddRecipeForm, LoginForm
 import os
 
 load_dotenv()
@@ -16,6 +18,22 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 ckeditor = CKEditor(app)
 csrf = CSRFProtect(app)
 db = SQLAlchemy(app)
+
+login_manager = LoginManager()
+login_manager.init_app(app)
+# If user attempts to access a login required route:
+login_manager.login_view = 'login'
+
+# Flask login will load a user from the database through their id
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(int(user_id))
+
+
+class User(UserMixin, db.Model):
+    id = db.Column(db.Integer, primary_key=True)  # Unique ID for each user
+    email = db.Column(db.String(150), unique=True, nullable=False)  # Email must be unique
+    password = db.Column(db.String(256), nullable=False)  # Store hashed password
 
 class Recipe(db.Model):
     id = db.Column(db.Integer, primary_key = True)
@@ -35,7 +53,33 @@ with app.app_context():
 @app.route("/")
 def home():
     recipes = Recipe.query.all()
-    return render_template("index.html", recipe_list = recipes)
+    return render_template("index.html", recipe_list = recipes, user=current_user)
+
+@app.route("/login")
+def login():
+#     if logged in go home
+    if current_user.is_authenticated:
+        return redirect(url_for('index'))
+
+    form = LoginForm()
+
+    if form.validate_on_submit():
+        user = User.query.filter_by(email=form.email.data).first()
+
+        if user and check_password_hash(user.password, form.password.data):
+            login_user(user)
+            return redirect(url_for('index'))
+        else:
+            flash('Login failed. Check email and password.')
+
+    return render_template('login.html', form=form)
+
+
+@app.route("/logout")
+@login_required
+def logout():
+    logout_user()
+    return redirect(url_for("index"))
 
 @app.route("/all_recipes")
 def all_recipes():
