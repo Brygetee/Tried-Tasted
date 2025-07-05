@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="static/styles.css">
 </head>
 <body>
+
+<div class="login_form">
   <h2>Login</h2>
 
-  <!-- Form POSTs to the same URL -->
-  <form method="POST">
+  <form method="POST" >
     {{ form.hidden_tag() }} <!-- CSRF protection -->
 
     <!-- Email input -->
@@ -20,5 +22,6 @@
     <!-- Submit button -->
     <p>{{ form.submit() }}</p>
   </form>
+</div>
 </body>
 </html>

@@ -87,3 +87,19 @@ h1 {
     color: #F1642E;
 
 }
+/*------------------------------------Login Page---------------------------------------------*/
+
+.login_form{
+    height: 100vh;
+    color: #F1642E;
+    display: flex;
+    flex_direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px;
+    color: #F1642E;
+/*background-color: */
+}
+.login_form h2{
+    margin-bottom:100px;
+}
