@@ -1,16 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="static/styles.css">
 </head>
 <body>
-
+{% include "header.html"%}
+<div class="login_page">
 <div class="login_form">
-  <h2>Login</h2>
+    <h2 class="login_form_item">Login</h2><br>
 
-  <form method="POST" >
+
+
+    <form method="POST" class="login_form_item">
     {{ form.hidden_tag() }} <!-- CSRF protection -->
 
     <!-- Email input -->
@@ -20,8 +23,9 @@
     <p>{{ form.password.label }} {{ form.password(size=32) }}</p>
 
     <!-- Submit button -->
-    <p>{{ form.submit() }}</p>
+    <p class="login_button login_form_item">{{ form.submit() }}</p>
   </form>
+</div>
 </div>
 </body>
 </html>

@@ -89,17 +89,28 @@ h1 {
 }
 /*------------------------------------Login Page---------------------------------------------*/
 
+.login_page{
+    display: grid;
+    justify-content: center;
+    height: 70vh;
+}
+
 .login_form{
-    height: 100vh;
+
     color: #F1642E;
     display: flex;
-    flex_direction: column;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: 100px;
-    color: #F1642E;
-/*background-color: */
+    background-color: #fff6e5;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    width: 600px;
+    border-radius: 30px;
+    height: 350px;
+    gap: 10px;
 }
-.login_form h2{
-    margin-bottom:100px;
+
+#login_button{
+    background-color: red;
 }
