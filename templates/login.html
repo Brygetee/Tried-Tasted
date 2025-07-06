@@ -23,7 +23,8 @@
     <p>{{ form.password.label }} {{ form.password(size=32) }}</p>
 
     <!-- Submit button -->
-    <p class="login_button login_form_item">{{ form.submit() }}</p>
+    <p class="login_form_item">{{ form.submit(class_="register_login_button") }}</p>
+        <a href="/register">New here? Create an account</a>
   </form>
 </div>
 </div>

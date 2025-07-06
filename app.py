@@ -6,7 +6,7 @@ from flask.cli import load_dotenv
 from flask_ckeditor import CKEditor
 from werkzeug.utils import redirect
 from flask_wtf.csrf import CSRFProtect
-from forms import AddRecipeForm, LoginForm
+from forms import AddRecipeForm, LoginForm, RegisterForm
 import os
 
 load_dotenv()
@@ -80,6 +80,11 @@ def login():
 def logout():
     logout_user()
     return redirect(url_for("index"))
+
+@app.route("/register")
+def register():
+    form = RegisterForm()
+    return render_template("register.html", form=form)
 
 @app.route("/all_recipes")
 def all_recipes():

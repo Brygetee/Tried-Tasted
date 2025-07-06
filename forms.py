@@ -11,8 +11,13 @@ class AddRecipeForm(FlaskForm):
     submit = SubmitField("Submit Post")
 
 # Login form
-
 class LoginForm(FlaskForm):
     email = StringField('Email', validators=[InputRequired(), Email()])
     password = PasswordField('Password', validators=[InputRequired(), Length(min=6)])
     submit = SubmitField('Log In')
+
+# Register Form
+class RegisterForm(FlaskForm):
+    email = StringField("Email", validators=[InputRequired(), Email()])
+    password = PasswordField('Password', validators=[InputRequired(), Length(min=6)])
+    submit = SubmitField('Create Account')

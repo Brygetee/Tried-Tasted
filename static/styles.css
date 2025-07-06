@@ -111,6 +111,30 @@ h1 {
     gap: 10px;
 }
 
-#login_button{
-    background-color: red;
+.register_login_button{
+    background-color: #F1642E;
+    color: black;
+    border-radius:5px;
+    align: center;
+}
+/*------------------------------------Register Page---------------------------------------------*/
+.register_page{
+    height: 70vh;
+    display:grid;
+    justify-content: center;
+}
+
+.register_form{
+    color: #F1642E;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff6e5;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    width: 600px;
+    border-radius: 30px;
+    height: 350px;
+    gap: 10px;
 }
