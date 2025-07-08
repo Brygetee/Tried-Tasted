@@ -116,6 +116,8 @@ h1 {
     color: black;
     border-radius:5px;
     align: center;
+    border: none;
+
 }
 /*------------------------------------Register Page---------------------------------------------*/
 .register_page{
