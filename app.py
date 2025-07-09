@@ -86,6 +86,10 @@ def register():
     form = RegisterForm()
     return render_template("register.html", form=form)
 
+@app.route("/planner")
+def planner():
+    return render_template("planner.html")
+
 @app.route("/all_recipes")
 def all_recipes():
     recipes = Recipe.query.all()
