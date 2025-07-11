@@ -81,9 +81,36 @@ def logout():
     logout_user()
     return redirect(url_for("index"))
 
-@app.route("/register")
+@app.route("/register", methods=["GET", "POST"])
 def register():
     form = RegisterForm()
+    if form.validate_on_submit():
+    #     Check if user is already in database
+        result = db.session.execute(db.select(User).where(User.email == form.email.data))
+        user = result.scalar()
+        if user:
+    #         if user exists
+            flash("This email is already registered, login instead")
+            return redirect(url_for('login'))
+
+    #         hash password
+        hashed_and_salted_password = generate_password_hash(form.password.data,
+            method = 'pbkdf2:sha256',
+            salt_length= 8
+            )
+        user = User(
+            email = form.email.data,
+            password = hashed_and_salted_password,
+        )
+        db.session.add(user)
+        db.session.commit()
+        login_user(user)
+        return redirect(url_for('home'))
+
+
+
+
+
     return render_template("register.html", form=form)
 
 @app.route("/planner")
@@ -149,4 +176,4 @@ def add_recipe():
     return render_template("add_recipe.html", form=form)
 
 if __name__ == "__main__":
-    app.run(debug=False, port=8001)
+    app.run(debug=False, port=8003)
