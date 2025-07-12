@@ -69,6 +69,7 @@ h1 {
     display: block;
     margin: auto;
 }
+
 /*card buttons*/
 .meal_button{
     color: #F1642E;
@@ -162,4 +163,21 @@ h1 {
     border-radius: 30px;
     height: 350px;
     gap: 10px;
+}
+/*------------------------------------Breakfast Page---------------------------------------------*/
+.breakfast_card{
+    background-color: #fff6e5;
+    border-color: #fff6e5;
+    border-radius:10px;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+    color: #F1642E;
+}
+.breakfast_card_image{
+    height: auto;
+    width: 100px;
 }
