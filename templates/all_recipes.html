@@ -2,40 +2,36 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>All Recipes</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
 </head>
 <body>
 {% include "header.html" %}
-{% for recipe in recipe_list %}
-  <div>
-    <h2>{{ recipe.recipe_name }}</h2>
-    <a href="{{ recipe.url }}">{{ recipe.url }}</a>
-    <p>{{ recipe.recipe | safe }}</p>
-  </div>
-{% else %}
-  <p>No recipes yet!</p>
-{% endfor %}
 
+{% if recipe_list %}
 <table class="all_recipes_table">
+  <thead>
   <tr>
     <th>Recipe Item</th>
     <th>Web Link</th>
+    <th>Recipe</th>
     <th>Category</th>
-
   </tr>
-  <tr>
-    <td>Alfreds Futterkiste</td>
-    <td>Maria Anders</td>
-
-  </tr>
-  <tr>
-    <td>Centro comercial Moctezuma</td>
-    <td>Francisco Chang</td>
-    <td>Mexico</td>
-  </tr>
+  </thead>
+  <tbody>
+    {% for recipe in recipe_list %}
+      <tr>
+        <td>{{ recipe.recipe_name }}</td>
+        <td><a href="{{recipe.url}}">{{ recipe.url }}</a></td>
+        <td><a href="{{recipe.recipe}}">Open Recipe</a></td>
+        <td>{{ recipe.category }}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
 </table>
-
+{% else %}
+  <p>No recipes yet!</p>
+{% endif %}
 
 </body>
 </html>

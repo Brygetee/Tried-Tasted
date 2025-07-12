@@ -187,3 +187,26 @@ h1 {
     height: auto;
     width: 100px;
 }
+
+/*------------------------------------All Recipes Page---------------------------------------------*/
+
+
+
+.all_recipes_table {
+  border-collapse: collapse;
+  width: 90%;
+  max-width: 800px;
+  margin: 40px auto; /* centers table and adds vertical space */
+  color: #F1642E;
+}
+
+.all_recipes_table th,
+.all_recipes_table td {
+  border: 1px solid #fff6e5;
+  padding: 10px;
+  text-align: left;
+}
+.all_recipes_table a {
+  color: #F1642E;
+  text-decoration: none;
+}
