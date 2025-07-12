@@ -165,6 +165,11 @@ h1 {
     gap: 10px;
 }
 /*------------------------------------Breakfast Page---------------------------------------------*/
+.breakfast_recipes_page{
+    display:grid;
+    justify-content: start;
+    height : 70vh;
+}
 .breakfast_card{
     background-color: #fff6e5;
     border-color: #fff6e5;
@@ -176,6 +181,7 @@ h1 {
     justify-content: center;
     align-items:center;
     color: #F1642E;
+    margin-left: 10px;
 }
 .breakfast_card_image{
     height: auto;
