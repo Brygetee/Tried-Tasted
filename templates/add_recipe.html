@@ -17,6 +17,11 @@
       {{ form.recipe_name(id="recipe_name") }}<br><br>
     </div>
     <div>
+      <label for="category">{{ form.category.label.text }}</label><br>
+      {{ form.category(id="category") }}<br><br>
+    </div>
+
+    <div>
       <label for="url">{{ form.url.label.text }}</label><br>
       {{ form.url(id="url") }}<br><br>
     </div>

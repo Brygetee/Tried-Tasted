@@ -40,6 +40,7 @@ class Recipe(db.Model):
     recipe_name = db.Column(db.String(100), nullable=False)
     url = db.Column(db.String(200))
     recipe = db.Column(db.Text)
+    category = db.Column(db.String(50), nullable=False)
 
 # for debugging
     def __repr__(self):
@@ -168,7 +169,8 @@ def add_recipe():
         new_recipe = Recipe(
             recipe_name = form.recipe_name.data,
             url = form.url.data,
-            recipe=form.recipe.data
+            recipe=form.recipe.data,
+            category = form.category.data
         )
         db.session.add(new_recipe)
         db.session.commit()
