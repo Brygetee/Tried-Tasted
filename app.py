@@ -1,3 +1,4 @@
+
 from flask import Flask, render_template, url_for, redirect, flash, request
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager, login_user, login_required, logout_user, current_user, UserMixin
@@ -56,11 +57,11 @@ def home():
     recipes = Recipe.query.all()
     return render_template("index.html", recipe_list = recipes, user=current_user)
 
-@app.route("/login")
+@app.route("/login", methods=["POST", "GET"])
 def login():
 #     if logged in go home
     if current_user.is_authenticated:
-        return redirect(url_for('index'))
+        return redirect(url_for('home'))
 
     form = LoginForm()
 
@@ -69,7 +70,7 @@ def login():
 
         if user and check_password_hash(user.password, form.password.data):
             login_user(user)
-            return redirect(url_for('index'))
+            return redirect(url_for('home'))
         else:
             flash('Login failed. Check email and password.')
 
@@ -80,7 +81,7 @@ def login():
 @login_required
 def logout():
     logout_user()
-    return redirect(url_for("index"))
+    return redirect(url_for("home"))
 
 @app.route("/register", methods=["GET", "POST"])
 def register():
