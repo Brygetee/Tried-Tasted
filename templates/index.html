@@ -9,15 +9,15 @@
 {% include "header.html" %}
 
 
-<!--All Recipes Button-->
-
-<div style="display: flex; justify-content: center;">
-<a href="{{ url_for('all_recipes') }}" class="btn btn-warning btn-lg" id="all_recipes_button">
-  All Recipes
-</a>
+<!-- Homepage Buttons Area -->
+<div class="homepage_buttons_area">
+  <a href="{{ url_for('all_recipes') }}" class="btn btn-warning btn-lg" id="all_recipes_button">
+    All Recipes
+  </a>
+  <a href="{{ url_for('add_recipe') }}" class="btn btn-warning btn-lg" id="add_new_recipe_button">
+    Add New Recipe
+  </a>
 </div>
-
-
 
 <!--Cards-->
 <div class="all_cards">
@@ -150,16 +150,9 @@
 </div>
 
 
-<!---->
 
 
-<!--Add A New Recipe Button-->
 
-<div style="display: flex; justify-content: center;">
-<a href="{{ url_for('add_recipe') }}" class="btn btn-warning btn-lg" id="add_new_recipe_button">
-  Add New Recipe
-</a>
-</div>
 </div>
 </body>
 </html>
