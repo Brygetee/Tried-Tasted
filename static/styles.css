@@ -73,6 +73,7 @@ h1 {
     color: #F1642E;
     height:300px;
     width:400px;
+    margin-bottom: 20px;
 }
 
 /* Food Icons */
@@ -108,6 +109,7 @@ h1 {
     display: grid;
     justify-content: center;
     height: 70vh;
+
 }
 
 .login_form{
